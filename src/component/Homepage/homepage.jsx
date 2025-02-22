@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import "./homepage.css";
 import DoctorList from "../DoctorList/DoctorList";
 import Duration from "../Duration/Duration";
 import AppointmentType from "../AppointmentType/AppointmentType";
@@ -8,7 +9,6 @@ import { apiUrl } from "../Context/context";
 
 function Homepage() {
   const dataContext = useContext(DataContext);
-  // console.log(dataContext.date)
   
   const handleClick = async () => {
     const requestBody = {
@@ -33,23 +33,23 @@ function Homepage() {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <div>
-        <div>
-          patient name: <input type="text" placeholder="Patient Name" value={dataContext.patientName} onChange={(e)=>dataContext.setPatientName(e.target.value)}/>
+        <div className="labels">
+          <div>Patient Name:</div> <div><input type="text" placeholder="Patient Name" value={dataContext.patientName} onChange={(e)=>dataContext.setPatientName(e.target.value)}/></div>
         </div>
       </div>
-      <div>
+      <div className="labels">
         <DoctorList />
       </div>
-      <div>
-        <div>date: </div>
-        <input type="date" id="birthday" name="birthday" value={dataContext.date} onChange={(e)=>dataContext.setDate(e.target.value)} />
+      <div className="labels">
+        <div>Date: </div>
+        <div><input type="date" id="birthday" name="birthday" value={dataContext.date} onChange={(e)=>dataContext.setDate(e.target.value)} /></div>
       </div>
-      <div>
+      <div className="labels">
         <Duration />
       </div>
-      <div>
+      <div className="labels">
         <AppointmentType />
       </div>
       <div>

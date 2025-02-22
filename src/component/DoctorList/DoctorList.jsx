@@ -17,16 +17,16 @@ function DoctorList() {
 
   return (
     <div>
-      <label>Select your Doctor:</label>
-      <select name="doctors" id="doctor" value={chosenDoc} onChange={handleChange}>
-        <option value="" disabled>Select a doctor</option>
-        {dataContext.doctorList &&
-          dataContext.doctorList.map((item, ind) => (
-            <option value={item[1]} key={ind}>
-              {item[0]}
-            </option>
-          ))}
-      </select>
+        <label>Select your Doctor:</label>
+        <select name="doctors" id="doctor" value={chosenDoc} onChange={handleChange}>
+          <option value="" disabled>Select a doctor</option>
+          {dataContext.doctorList &&
+            dataContext.doctorList.map((item, ind) => (
+              <option value={item[1]} key={ind}>
+                {item[0]}
+              </option>
+            ))}
+        </select>
     </div>
   );
 }
